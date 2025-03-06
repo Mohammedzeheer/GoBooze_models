@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -10,15 +11,18 @@ const storePricingSchema = new Schema({
   },
   sellingPrice: { type: Number, required: true },
   discount: { type: Number, required: true },
-  finalSellingPrice: { type: Number, required: true }
+  finalSellingPrice: { type: Number, required: true },
 });
-
 
 const variantsModel = new mongoose.Schema(
   {
     variantName: {
       type: String,
       required: true,
+    },
+    slug: {
+      type: String,
+      unique: true, 
     },
     variantCode: {
       type: String,
@@ -57,7 +61,7 @@ const variantsModel = new mongoose.Schema(
     },
     products: {
       type: Schema.Types.ObjectId,
-      ref: "product",
+      ref: "Product",
       required: false,
     },
     isTopSellingProduct: {
@@ -123,9 +127,15 @@ const variantsModel = new mongoose.Schema(
     },
   },
   {
-    // suppressReservedKeysWarning: true,
     timestamps: true,
   }
 );
+
+variantsModel.pre("save", function (next) {
+  if (!this.slug) {
+    this.slug = slugify(this.variantName, { lower: true, strict: true });
+  }
+  next();
+});
 
 module.exports = mongoose.model("Variant", variantsModel, "variants");
