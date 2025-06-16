@@ -10,15 +10,18 @@ const storePricingSchema = new Schema({
   },
   sellingPrice: { type: Number, required: true },
   discount: { type: Number, required: true },
-  finalSellingPrice: { type: Number, required: true }
+  finalSellingPrice: { type: Number, required: true },
 });
-
 
 const variantsModel = new mongoose.Schema(
   {
     variantName: {
       type: String,
       required: true,
+    },
+    slug: {
+    type: String,
+    unique: true, 
     },
     variantCode: {
       type: String,
@@ -57,7 +60,7 @@ const variantsModel = new mongoose.Schema(
     },
     products: {
       type: Schema.Types.ObjectId,
-      ref: "product",
+      ref: "Product",
       required: false,
     },
     isTopSellingProduct: {
@@ -80,6 +83,10 @@ const variantsModel = new mongoose.Schema(
       required: false,
     },
     description: {
+      type: String,
+      required: false,
+    },
+    metaDescription: {
       type: String,
       required: false,
     },
