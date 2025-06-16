@@ -4,31 +4,30 @@ const ObjectId = mongoose.Schema.Types.ObjectId;
 const Schema = mongoose.Schema;
 const productSchema = new mongoose.Schema(
   {
-
     productName: {
       type: String,
       required: true,
     },
     category: {
-        type: ObjectId,
-        ref: "category",
-        required: false,
+      type: ObjectId,
+      ref: "category",
+      required: false,
     },
     subCategory: {
-        type: ObjectId,
-        ref: "subCategory",
-        required: false
+      type: ObjectId,
+      ref: "subCategory",
+      required: false,
     },
     brand: {
       type: ObjectId,
-      ref: "brand",
+      ref: "brands",
       required: true,
     },
     tags: {
       type: Array,
       default: [],
     },
-    description:{
+    description: {
       type: String,
       required: true,
     },
@@ -54,7 +53,7 @@ const productSchema = new mongoose.Schema(
       enum: ["active", "inactive"],
       default: "active",
       required: true,
-    }
+    },
 
     // product_name: {
     //   type: String,
@@ -169,6 +168,9 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-productSchema.index({ productName: 1, category: 1 ,subCategory:1, brand:1,variants:1 }, { unique: true });
+productSchema.index(
+  { productName: 1, category: 1, subCategory: 1, brand: 1, variants: 1 },
+  { unique: true }
+);
 
-module.exports = mongoose.model("Product", productSchema,"products");
+module.exports = mongoose.model("Product", productSchema, "products");
