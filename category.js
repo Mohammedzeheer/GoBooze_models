@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const slugify = require("slugify");
 
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
@@ -22,12 +23,24 @@ const collectionSchema = new mongoose.Schema(
       ref: "Admin",
       required: false,
     },
-
     status: {
       type: String,
       enum: ["active", "inactive"],
       default: "active",
       required: true,
+    },
+    slug: {
+      type: String,
+      required: false,
+      unique: true,
+    },
+    metaTitle: {
+      type: String,
+      required: false,
+    },
+    metaDescription: {
+      type: String,
+      required: false,
     },
   },
   {
@@ -35,5 +48,15 @@ const collectionSchema = new mongoose.Schema(
     timestamps: true,
   }
 );
+
+collectionSchema.pre("save", function (next) {
+  if (this.isModified("collection_name") || !this.slug) {
+    this.slug = slugify(this.collection_name, {
+      lower: true,
+      strict: true,
+    });
+  }
+  next();
+});
 
 module.exports = mongoose.model("Category", collectionSchema, "categories");
