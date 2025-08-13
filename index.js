@@ -30,6 +30,8 @@ const inquiryModel = require("./inquiry")
 const ContentManagementModel = require("./content_management")
 const redeemCouponModel = require("./redeem_coupon")
 const subscriptionModel = require("./subscription");
+const loyaltySettingsModel = require("./LoyaltySettings");
+const loyaltyPointsModel = require("./LoyaltyPoints");
 
 module.exports = {
   addressModel,
@@ -63,5 +65,7 @@ module.exports = {
   inquiryModel,
   ContentManagementModel,
   redeemCouponModel,
-  subscriptionModel
+  subscriptionModel,
+  loyaltySettingsModel,
+  loyaltyPointsModel
 };
