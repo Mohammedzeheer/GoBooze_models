@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema(
       type: ObjectId,
       ref: "User",
       required: true,
-      
+
     },
     address_id: {
       type: ObjectId,
@@ -36,7 +36,7 @@ const orderSchema = new mongoose.Schema(
     transaction_status: {
       type: String,
       required: false,
-      default:"pending"
+      default: "pending"
     },
     order_status: {
       type: String,
@@ -141,7 +141,7 @@ const orderSchema = new mongoose.Schema(
       type: [{ type: Object }],
       required: false,
     },
-    cartIds : {
+    cartIds: {
       type: [String],
       required: false,
     },
@@ -159,6 +159,20 @@ const orderSchema = new mongoose.Schema(
     deliveryImages: {
       type: [String],
       required: false,
+    },
+    loyaltyPointsUsed: {
+      type: Number,
+      default: 0,
+      min: 0
+    },
+    loyaltyDiscount: {
+      type: Number,
+      default: 0,
+      min: 0
+    },
+    isLoyaltyApplied: {
+      type: Boolean,
+      default: false
     },
   },
   {
