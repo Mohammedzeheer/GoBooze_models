@@ -174,6 +174,11 @@ const orderSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
+    orderSource: {
+      type: String,
+      enum: ["mobile", "website"],
+      default: "website"
+    },
   },
   {
     timestamps: true,
