@@ -303,8 +303,9 @@ const userSchema = new mongoose.Schema(
     },
   },
   {
-    timestamps: false,
+    timestamps: true,
   }
 );
 
 module.exports = mongoose.model("User", userSchema, "users");
+
