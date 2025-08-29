@@ -2,21 +2,11 @@ const mongoose = require("mongoose");
 
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
-// Helper function to generate a 7-digit unique ID
-// function generateUniqueId() {
-//   const timestampPart = Date.now().toString().slice(-5); // Last 5 digits of the timestamp
-//   const randomPart = Math.floor(10 + Math.random() * 90); // 2-digit random number to ensure 7 digits total
-//   return parseInt(timestampPart + randomPart.toString());
-// }
-
 const orderSchema = new mongoose.Schema(
   {
     sequence_number: {
       type: String,
       default: ""
-      // required: true,
-      // unique: true,
-      // default: generateUniqueId
     },
     user_id: {
       type: ObjectId,
@@ -179,17 +169,14 @@ const orderSchema = new mongoose.Schema(
       enum: ["mobile", "website"],
       default: "website"
     },
+     paymentSuccessTime: {
+      type: Date,
+      required: false,
+    },
   },
   {
     timestamps: true,
   }
 );
-
-// orderSchema.pre('save', function(next) {
-//   if (this.isNew && !this.sequence_number) {
-//     this.sequence_number = generateUniqueId();
-//   }
-//   next();
-// });
 
 module.exports = mongoose.model("Order", orderSchema, "orders");
