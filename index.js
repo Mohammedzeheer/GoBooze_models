@@ -32,6 +32,7 @@ const redeemCouponModel = require("./redeem_coupon")
 const subscriptionModel = require("./subscription");
 const loyaltySettingsModel = require("./LoyaltySettings");
 const loyaltyPointsModel = require("./LoyaltyPoints");
+const stockLogModel = require("./stock_log");
 
 module.exports = {
   addressModel,
@@ -67,5 +68,6 @@ module.exports = {
   redeemCouponModel,
   subscriptionModel,
   loyaltySettingsModel,
-  loyaltyPointsModel
+  loyaltyPointsModel,
+  stockLogModel
 };
