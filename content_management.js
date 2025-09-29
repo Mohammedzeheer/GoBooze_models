@@ -33,21 +33,21 @@ const contentManagementSchema = new mongoose.Schema(
         links: {
             type: [String], 
             required: false,
-            validate: {
-                validator: function(links) {
-                    if (!links || links.length === 0) return true;
-                    return links.every(link => {
-                        if (!link || link.trim() === '') return true; 
-                        try {
-                            new URL(link);
-                            return true;
-                        } catch {
-                            return false;
-                        }
-                    });
-                },
-                message: 'All links must be valid URLs'
-            }
+            // validate: {
+            //     validator: function(links) {
+            //         if (!links || links.length === 0) return true;
+            //         return links.every(link => {
+            //             if (!link || link.trim() === '') return true; 
+            //             try {
+            //                 new URL(link);
+            //                 return true;
+            //             } catch {
+            //                 return false;
+            //             }
+            //         });
+            //     },
+            //     message: 'All links must be valid URLs'
+            // }
         },
         theme_type: {
             type: String,
