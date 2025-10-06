@@ -10,6 +10,11 @@ const storePricingSchema = new Schema({
   },
   sellingPrice: { type: Number, required: true },
   discount: { type: Number, required: true },
+  discountType: {
+    type: String,
+    enum: ["percentage", "amount"],
+    default: "percentage",
+  },
   finalSellingPrice: { type: Number, required: true },
 });
 
@@ -20,8 +25,8 @@ const variantsModel = new mongoose.Schema(
       required: true,
     },
     slug: {
-    type: String,
-    unique: true, 
+      type: String,
+      unique: true,
     },
     variantCode: {
       type: String,
@@ -46,6 +51,11 @@ const variantsModel = new mongoose.Schema(
     discount: {
       type: Number,
       required: false,
+    },
+    discountType: {
+      type: String,
+      enum: ["percentage", "amount"],
+      default: "percentage",
     },
     finalSellingPrice: {
       type: Number,
