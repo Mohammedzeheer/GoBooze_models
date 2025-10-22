@@ -261,6 +261,12 @@ const userSchema = new mongoose.Schema(
       ref: "Product",
       required: false,
     },
+    tags: {
+      type: [ObjectId],
+      ref: "Tag",
+      required: false,
+      default: [],
+    },
     percentage_of_items_purchased_on_offers: {
       type: Number,
       required: false,
