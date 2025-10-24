@@ -33,6 +33,7 @@ const subscriptionModel = require("./subscription");
 const loyaltySettingsModel = require("./LoyaltySettings");
 const loyaltyPointsModel = require("./LoyaltyPoints");
 const stockLogModel = require("./stock_log");
+const tagModel = require("./tag");
 
 module.exports = {
   addressModel,
@@ -69,5 +70,6 @@ module.exports = {
   subscriptionModel,
   loyaltySettingsModel,
   loyaltyPointsModel,
-  stockLogModel
+  stockLogModel,
+  tagModel
 };
