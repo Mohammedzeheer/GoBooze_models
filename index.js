@@ -34,6 +34,7 @@ const loyaltySettingsModel = require("./LoyaltySettings");
 const loyaltyPointsModel = require("./LoyaltyPoints");
 const stockLogModel = require("./stock_log");
 const tagModel = require("./tag");
+const boostCampaignModel = require("./BoostCampaign");
 
 module.exports = {
   addressModel,
@@ -71,5 +72,6 @@ module.exports = {
   loyaltySettingsModel,
   loyaltyPointsModel,
   stockLogModel,
-  tagModel
+  tagModel,
+  boostCampaignModel
 };
