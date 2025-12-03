@@ -16,7 +16,7 @@ const pointsSchema = new mongoose.Schema({
       boostRefs: [{
         campaignId: { type: ObjectId, ref: 'BoostCampaign' },
         name: String,
-        type: String,
+        campaignType: String,
         pointsAdded: Number
       }],
       orderId: { type: ObjectId },
