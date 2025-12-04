@@ -54,7 +54,6 @@ const tagSchema = new mongoose.Schema(
 );
 
 // Index for faster queries
-tagSchema.index({ name: 1 });
 tagSchema.index({ category: 1 });
 
 module.exports = mongoose.model("Tag", tagSchema, "tags");
