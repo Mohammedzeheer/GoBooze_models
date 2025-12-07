@@ -173,6 +173,8 @@ const orderSchema = new mongoose.Schema(
       type: Date,
       required: false,
     },
+    stripe_customer_id: String,
+    stripe_payment_intent_id: String
   },
   {
     timestamps: true,
