@@ -9,6 +9,12 @@ const storePricingSchema = new Schema({
     required: true,
   },
   sellingPrice: { type: Number, required: true },
+  memberPrice: {
+    type: Number,
+    required: false,
+    default: 0,
+    min: 0
+  },
   discount: { type: Number, required: true },
   discountType: {
     type: String,
