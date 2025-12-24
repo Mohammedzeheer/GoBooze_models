@@ -169,12 +169,27 @@ const orderSchema = new mongoose.Schema(
       enum: ["mobile", "website"],
       default: "website"
     },
-     paymentSuccessTime: {
+    paymentSuccessTime: {
       type: Date,
       required: false,
     },
     stripe_customer_id: String,
-    stripe_payment_intent_id: String
+    stripe_payment_intent_id: String,
+    mailchimp_campaign_id: {
+      type: String,
+      required: false,
+      index: true
+    },
+    mailchimp_email_id: {
+      type: String,
+      required: false
+    },
+    campaign_source: {
+      type: String,
+      enum: ['newsletter', 'abandoned_cart_email', 'direct'],
+      default: 'direct',
+      required: false
+    },
   },
   {
     timestamps: true,
