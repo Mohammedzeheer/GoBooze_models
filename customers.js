@@ -316,7 +316,31 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: null,
       index: true
-    }
+    },
+    email_marketing_opt_in: {
+      type: Boolean,
+      default: false,
+      index: true
+    },
+    sms_marketing_opt_in: {
+      type: Boolean,
+      default: false
+    },
+    consent_timestamp: { type: Date },
+    consent_ip: { type: String },
+    consent_source: {
+      type: String,
+      enum: ['Web', 'iOS', 'Android']
+    },
+    // Mailchimp Sync Fields
+    mailchimp_status: {
+      type: String,
+      enum: ['subscribed', 'unsubscribed', 'cleaned', 'pending']
+    },
+    mailchimp_subscribed_at: { type: Date },
+    mailchimp_unsubscribed_at: { type: Date },
+    mailchimp_unsubscribe_reason: { type: String },
+    mailchimp_last_synced: { type: Date },
   },
   {
     timestamps: true,
