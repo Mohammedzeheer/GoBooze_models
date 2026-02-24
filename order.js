@@ -190,6 +190,18 @@ const orderSchema = new mongoose.Schema(
       default: 'direct',
       required: false
     },
+    scheduledDate: {
+      type: Date,
+      default: null
+    },
+    scheduledTimeSlot: {
+      type: String,
+      default: null
+    },
+    isScheduled: {
+      type: Boolean,
+      default: false
+    }
   },
   {
     timestamps: true,
