@@ -140,6 +140,12 @@ const adminSchema = new mongoose.Schema(
         // index: '2dsphere'
       },
     },
+    deliveryOptions: {
+      type: String,
+      enum: ["deliver_now", "schedule_only", "both"],
+      default: "both",
+      required: false,
+    }
 
     // average_store_rating: {
     //   type: Number,
