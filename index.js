@@ -36,6 +36,7 @@ const stockLogModel = require("./stock_log");
 const tagModel = require("./tag");
 const boostCampaignModel = require("./BoostCampaign");
 const visitLogModel = require("./visit_log");
+const noticeModel = require("./notice");
 
 module.exports = {
   addressModel,
@@ -76,4 +77,5 @@ module.exports = {
   tagModel,
   boostCampaignModel,
   visitLogModel,
+  noticeModel
 };
