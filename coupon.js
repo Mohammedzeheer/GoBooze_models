@@ -49,20 +49,24 @@ const couponSchema = new mongoose.Schema(
       type: Boolean,
       default: false
     },
-    minimum_purchase_amount:{
+    minimum_purchase_amount: {
       type: Number,
       required: false,
-      default:0
+      default: 0
     },
-    minimum_quantity_items:{
+    minimum_quantity_items: {
       type: Number,
       required: false,
-      default:0
+      default: 0
     },
-    purchase_requirement :{
+    purchase_requirement: {
       type: String,
       default: 'no_minimum_requirements',
       enum: ["no_minimum_requirements", "minimum_purchase_amount", "minimum_quantity_items"]
+    },
+    overrideProductDiscount: {
+      type: Boolean,
+      default: false,
     }
   },
   {
