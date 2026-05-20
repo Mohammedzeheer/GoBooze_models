@@ -31,28 +31,32 @@ const adminSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
-
     role_id: {
       type: ObjectId,
       required: true,
       ref: "Role",
     },
-
     image: {
       type: String,
       required: false,
     },
-
     status: {
       type: String,
       enum: ["active", "inactive"],
       default: "active",
       required: true,
     },
-
     sequence_no: {
       type: String,
       required: false,
+    },
+    is_super_admin: {
+      type: Boolean,
+      default: false,
+    },
+    is_seed: {
+      type: Boolean,
+      default: false,
     },
   },
   {
