@@ -79,5 +79,5 @@ module.exports = {
   boostCampaignModel,
   visitLogModel,
   noticeModel,
-  permissionModel
+  permissionModel,
 };
