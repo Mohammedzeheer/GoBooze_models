@@ -38,6 +38,7 @@ const boostCampaignModel = require("./BoostCampaign");
 const visitLogModel = require("./visit_log");
 const noticeModel = require("./notice");
 const permissionModel = require("./permission");
+const businessProfileModel = require("./business_profile");
 
 module.exports = {
   addressModel,
@@ -80,4 +81,5 @@ module.exports = {
   visitLogModel,
   noticeModel,
   permissionModel,
+  businessProfileModel,
 };
