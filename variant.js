@@ -3,25 +3,14 @@ const Schema = mongoose.Schema;
 const ObjectId = mongoose.Schema.Types.ObjectId;
 
 const storePricingSchema = new Schema({
-  storeId: {
-    type: ObjectId,
-    ref: "Store",
-    required: true,
-  },
-  sellingPrice: { type: Number, required: true },
-  memberPrice: {
-    type: Number,
-    required: false,
-    default: 0,
-    min: 0
-  },
+  storeId: { type: ObjectId, ref: "Store", required: true },
+  sellingPrice: { type: Number, required: true },       // retail price (inc. GST for B2C)
+  memberPrice: { type: Number, default: 0 },             // loyalty member price (existing)
+  b2bPrice: { type: Number, default: null },             // 🆕 wholesale price (ex-GST)
   discount: { type: Number, required: true },
-  discountType: {
-    type: String,
-    enum: ["percentage", "amount"],
-    default: "percentage",
-  },
-  finalSellingPrice: { type: Number, required: true },
+  discountType: { type: String, enum: ["percentage", "amount"], default: "percentage" },
+  finalSellingPrice: { type: Number, required: true },   // retail final price
+  b2bFinalPrice: { type: Number, default: null },        // 🆕 = b2bPrice after any trade discount
 });
 
 const variantsModel = new mongoose.Schema(
