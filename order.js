@@ -186,7 +186,7 @@ const orderSchema = new mongoose.Schema(
     },
     orderSource: {
       type: String,
-      enum: ["mobile", "website"],
+      enum: ["mobile", "website", "trade_website", "trade"],
       default: "website"
     },
     paymentSuccessTime: {
@@ -221,7 +221,12 @@ const orderSchema = new mongoose.Schema(
     isScheduled: {
       type: Boolean,
       default: false
-    }
+    },
+    poNumber: { type: String, default: "" },
+    is_b2b_order: { type: Boolean, default: false },
+    b2b_subtotal_ex_gst: { type: Number, default: 0 },
+    b2b_gst_amount: { type: Number, default: 0 },
+    b2b_total_inc_gst: { type: Number, default: 0 },
   },
   {
     timestamps: true,
@@ -234,8 +239,8 @@ orderSchema.virtual('isDiscountStacked').get(function () {
 
 orderSchema.virtual('totalSavings').get(function () {
   return (this.productDiscountAmount || 0) +
-         (this.couponDiscountAmount || 0) +
-         (this.loyaltyDiscount || 0);
+    (this.couponDiscountAmount || 0) +
+    (this.loyaltyDiscount || 0);
 });
 
 orderSchema.set('toJSON', { virtuals: true });
