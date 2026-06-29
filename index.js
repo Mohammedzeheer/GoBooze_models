@@ -39,6 +39,7 @@ const visitLogModel = require("./visit_log");
 const noticeModel = require("./notice");
 const permissionModel = require("./permission");
 const businessProfileModel = require("./business_profile");
+const savedListModel= require('./savedList')
 
 module.exports = {
   addressModel,
@@ -82,4 +83,5 @@ module.exports = {
   noticeModel,
   permissionModel,
   businessProfileModel,
+  savedListModel,
 };
