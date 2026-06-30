@@ -15,7 +15,7 @@ const savedListSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      enum: ["standing_order", "event_pack", "custom"],
+      enum: ["quick_order", "repeat_order", "custom"],
       default: "custom",
     },
     auto_suggest_day: {
@@ -29,11 +29,11 @@ const savedListSchema = new mongoose.Schema(
     },
     items: [
       {
-        variant_id:  { type: ObjectId, ref: "Variant", required: true },
+        variant_id: { type: ObjectId, ref: "Variant", required: true },
         variantName: { type: String },
-        variantImage:{ type: String },
-        quantity:    { type: Number, default: 1, min: 1 },
-        price:       { type: Number, default: 0 },
+        variantImage: { type: String },
+        quantity: { type: Number, default: 1, min: 1 },
+        price: { type: Number, default: 0 },
       },
     ],
     status: {
