@@ -4,9 +4,9 @@ const addressSchema = new mongoose.Schema(
   {
     user_id: { type: ObjectId, required: true },
     addressFullName: { type: String, required: false },
-    first_name: { type:String, reqired:false },
-    last_name: { type:String,  required:false },
-    address: { type:String, required: false },
+    first_name: { type: String, reqired: false },
+    last_name: { type: String, required: false },
+    address: { type: String, required: false },
     addressPhoneNumber: { type: String, required: true },
     locality: { type: String, required: false },
     country: { type: String, required: false },
@@ -34,6 +34,28 @@ const addressSchema = new mongoose.Schema(
       type: String,
       enum: ["active", "inactive"],
       default: "active",
+      required: false,
+    },
+    approval_status: {
+      type: String,
+      enum: ["pending", "approved", "rejected"],
+      default: "active",
+    },
+    approval_note: {
+      type: String,
+      default: "",
+    },
+    is_b2b: {
+      type: Boolean,
+      default: false,
+    },
+    approved_by: {
+      type: ObjectId,
+      ref: "User",
+      required: false,
+    },
+    approved_at: {
+      type: Date,
       required: false,
     },
   },
