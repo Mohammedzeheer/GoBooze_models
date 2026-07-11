@@ -39,7 +39,7 @@ const addressSchema = new mongoose.Schema(
     approval_status: {
       type: String,
       enum: ["pending", "approved", "rejected"],
-      default: "active",
+      default: "approved",
     },
     approval_note: {
       type: String,
