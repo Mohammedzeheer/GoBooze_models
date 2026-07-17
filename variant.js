@@ -80,7 +80,7 @@ const variantsModel = new mongoose.Schema(
     },
     label: {
       type: String,
-      enum: ["hot", "bestseller", "new", "none"],
+      enum: ["hot", "bestseller", "new", "premium", "high_strength", "exotic", "bundles", "biggest_saving", "none"],
       default: "none",
     },
     vol: {
