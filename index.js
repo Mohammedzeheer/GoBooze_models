@@ -39,7 +39,9 @@ const visitLogModel = require("./visit_log");
 const noticeModel = require("./notice");
 const permissionModel = require("./permission");
 const businessProfileModel = require("./business_profile");
-const savedListModel= require('./savedList')
+const savedListModel = require('./savedList')
+const rewardSettingModel = require('./RewardSetting')
+const customerRewardProgressModel = require('./CustomerRewardProgress');
 
 module.exports = {
   addressModel,
@@ -84,4 +86,6 @@ module.exports = {
   permissionModel,
   businessProfileModel,
   savedListModel,
+  rewardSettingModel,
+  customerRewardProgressModel
 };
