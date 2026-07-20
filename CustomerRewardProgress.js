@@ -4,7 +4,7 @@ const customerRewardProgressSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true, index: true },
   requiredOrders: { type: Number, required: true },
   windowDays: { type: Number, required: true },
-  giftProduct: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: true },
+  giftProduct: { type: mongoose.Schema.Types.ObjectId, ref: 'Product', required: false },
   giftQuantity: { type: Number, required: true },
   rewardStartDate: { type: Date, required: true },
   rewardEndDate: { type: Date, required: true },
