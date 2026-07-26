@@ -95,6 +95,10 @@ const variantsModel = new mongoose.Schema(
       type: String,
       required: false,
     },
+    metaTitle: {
+      type: String,
+      required: false,
+    },
     alcohol_percentage: {
       type: Number,
       required: false,
