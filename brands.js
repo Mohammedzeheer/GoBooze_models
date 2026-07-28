@@ -9,6 +9,18 @@ const brandSchema = new mongoose.Schema(
         type:String,
         required:true
     },
+    slug: {
+        type: String,
+        required: false,
+    },
+    metaTitle: {
+        type: String,
+        required: false,
+    },
+    metaDescription: {
+        type: String,
+        required: false,
+    },
     description: {
         type:String,
         required:false
