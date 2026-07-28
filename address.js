@@ -58,6 +58,10 @@ const addressSchema = new mongoose.Schema(
       type: Date,
       required: false,
     },
+    is_default: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     timestamps: true,
