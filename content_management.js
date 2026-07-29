@@ -12,7 +12,7 @@ const contentManagementSchema = new mongoose.Schema(
         banner_type: {
             type: String,
             required: false,
-            enum: ["landing_page_banner", "festival_banner", "subscribe_banner", "none","category_search_banner","trade_banner"],
+            enum: ["landing_page_banner", "festival_banner", "subscribe_banner", "none", "category_search_banner", "trade_banner", "advertisement_banner", "home_hero_banner"],
         },
         title: {
             type: String,
@@ -31,7 +31,7 @@ const contentManagementSchema = new mongoose.Schema(
             required: false,
         },
         links: {
-            type: [String], 
+            type: [String],
             required: false,
             // validate: {
             //     validator: function(links) {
