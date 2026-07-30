@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-const ObjectId = mongoose.Schema.Types.ObjectId;
 const Schema = mongoose.Schema;
 
 const brandSchema = new mongoose.Schema(
   {
     brandName: {
-        type:String,
-        required:true
+      type: String,
+      required: true,
     },
     slug: {
         type: String,
@@ -22,19 +21,22 @@ const brandSchema = new mongoose.Schema(
         required: false,
     },
     description: {
-        type:String,
-        required:false
+      type: String,
+      required: false,
     },
-    
     brandImage: {
-        type:String,
-        required:false
+      type: String,
+      required: false,
     },
-    addedBy:{
-        type: Schema.Types.ObjectId,
-        ref: "User",    
+    brandBanner: {
+      type: String,
+      default: "",
     },
-    updatedBy:{
+    addedBy: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    updatedBy: {
       type: Schema.Types.ObjectId,
       ref: "User",
     },

@@ -42,6 +42,22 @@ const collectionSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    icon: {
+      type: String,
+      default: "",
+    },
+    thumbnail: {
+      type: String,
+      default: "",
+    },
+    bannerWeb: {
+      type: String,
+      default: "",
+    },
+    bannerMobile: {
+      type: String,
+      default: "",
+    },
   },
   {
     suppressReservedKeysWarning: true,
