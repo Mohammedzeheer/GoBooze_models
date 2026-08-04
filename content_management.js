@@ -50,6 +50,11 @@ const contentManagementSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    category_id: {
+      type: ObjectId,
+      ref: "Category",
+      required: false,
+    },
     updated_by: {
       type: ObjectId,
       ref: "Admin",
