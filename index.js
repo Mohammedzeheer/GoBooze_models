@@ -42,6 +42,7 @@ const businessProfileModel = require("./business_profile");
 const savedListModel = require('./savedList')
 const rewardSettingModel = require('./RewardSetting')
 const customerRewardProgressModel = require('./CustomerRewardProgress');
+const groupTagModel = require('./group-tag');
 
 module.exports = {
   addressModel,
@@ -87,5 +88,6 @@ module.exports = {
   businessProfileModel,
   savedListModel,
   rewardSettingModel,
-  customerRewardProgressModel
+  customerRewardProgressModel,
+  groupTagModel,
 };
