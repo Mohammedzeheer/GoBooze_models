@@ -19,6 +19,7 @@ const contentManagementSchema = new mongoose.Schema(
         "trade_banner",
         "advertisement_banner",
         "home_hero_banner",
+        "category_hero_banner"
       ],
     },
     title: {
