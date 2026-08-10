@@ -49,6 +49,10 @@ const OrderProductsSchema = new mongoose.Schema(
       required: false,
       ref: "User",
     },
+    reviewed_at: {
+      type: Date,
+      required: false,
+    },
     status: {
       type: String,
       enum: ["active", "inactive"],
