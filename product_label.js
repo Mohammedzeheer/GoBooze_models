@@ -21,6 +21,10 @@ const labelSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    labelBanner: {
+      type: String,
+      default: "",
+    },
     color: {
       type: String,
       default: "#ff0000",
