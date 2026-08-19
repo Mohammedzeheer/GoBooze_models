@@ -78,16 +78,17 @@ const variantsModel = new mongoose.Schema(
       ref: "Admin",
       required: false,
     },
-    // label: {
-    //   type: String,
-    //   enum: ["hot", "bestseller", "new", "premium", "high_strength", "exotic", "bundles", "biggest_saving", "none"],
-    //   default: "none",
-    // },
     label: {
-      type: Schema.Types.ObjectId,
-      ref: "labels",
-      default: null,
+      type: String,
+      enum: ["hot", "bestseller", "new", "premium", "high_strength", "exotic", "bundles", "biggest_saving", "none"],
+      default: "none",
     },
+    //when label module pushing add this field
+    // label: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "labels",
+    //   default: null,
+    // },
     vol: {
       type: String,
       required: false,
