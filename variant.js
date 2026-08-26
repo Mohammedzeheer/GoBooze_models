@@ -80,7 +80,7 @@ const variantsModel = new mongoose.Schema(
     },
     label: {
       type: String,
-      enum: ["hot", "bestseller", "new", "premium", "high_strength", "exotic", "bundles", "biggest_saving", "none"],
+      enum: ["hot", "bestseller", "new", "premium", "high_strength", "exotic", "bundles", "biggest_saving","world_tour","spot_light", "none"],
       default: "none",
     },
     //when label module pushing add this field

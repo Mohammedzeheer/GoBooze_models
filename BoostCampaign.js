@@ -72,6 +72,9 @@ endDate: {
       // Purpose: Apply boost only on specific products
       // Example: ["507f1f77bcf86cd799439011", "507f1f77bcf86cd799439012"]
       // Leave empty to apply on all products
+      variantIds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Variant' }],
+      // Purpose: Apply boost only on specific variants (granular alternative to productIds)
+      // Example: ["507f1f77bcf86cd799439021"] targets just that variant, not sibling variants of the same product
     },
     // Target specific categories
     categories: {
