@@ -44,6 +44,7 @@ const rewardSettingModel = require('./RewardSetting')
 const customerRewardProgressModel = require('./CustomerRewardProgress');
 const groupTagModel = require('./group-tag');
 const productLabelModel = require('./product_label');
+const deliveryZoneRequestModel = require('./DeliveryZoneRequest');
 
 module.exports = {
   addressModel,
@@ -92,4 +93,5 @@ module.exports = {
   customerRewardProgressModel,
   groupTagModel,
   productLabelModel,
+  deliveryZoneRequestModel,
 };
