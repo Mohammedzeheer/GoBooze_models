@@ -31,6 +31,10 @@ const subCollectionSchema = new mongoose.Schema(
       default: "active",
       required: true,
     },
+    popular: {
+      type: Boolean,
+      default: false,
+    },
   },
   {
     suppressReservedKeysWarning: true,
