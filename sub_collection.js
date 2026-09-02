@@ -13,6 +13,14 @@ const subCollectionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    metaTitle: {
+      type: String,
+      required: false,
+    },
+    metaDescription: {
+      type: String,
+      required: false,
+    },
 
     added_by: {
       type: ObjectId,
