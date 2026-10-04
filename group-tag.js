@@ -12,6 +12,12 @@ const groupTagSchema = new mongoose.Schema(
       type: String,
       required: false,
     },
+    categories: [
+      {
+        type: ObjectId,
+        ref: "Category",
+      },
+    ],
 
     added_by: {
       type: ObjectId,
