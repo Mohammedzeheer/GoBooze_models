@@ -35,6 +35,30 @@ const subCollectionSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    metaTitle: {
+      type: String,
+      required: false,
+    },
+    metaDescription: {
+      type: String,
+      required: false,
+    },
+    icon: {
+      type: String,
+      default: "",
+    },
+    thumbnail: {
+      type: String,
+      default: "",
+    },
+    bannerWeb: {
+      type: String,
+      default: "",
+    },
+    bannerMobile: {
+      type: String,
+      default: "",
+    },
   },
   {
     suppressReservedKeysWarning: true,
