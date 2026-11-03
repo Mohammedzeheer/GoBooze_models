@@ -15,6 +15,11 @@ const userSchema = new mongoose.Schema(
     email: {
       type: String,
     },
+    appleId: {
+      type: String,
+      index: true,
+      sparse: true,
+    },
     darkmode: {
       type: Boolean,
     },
